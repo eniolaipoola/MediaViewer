@@ -2,7 +2,6 @@ package com.dev.ehnyn.mediaviewer;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.VideoView;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
@@ -24,7 +23,6 @@ public class VideoActivity extends AppCompatActivity  implements MediaPlayer.OnC
     private MediaController mediaController;
 
     private VideoView mVideoView;
-    private View overlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +34,10 @@ public class VideoActivity extends AppCompatActivity  implements MediaPlayer.OnC
         setContentView(R.layout.activity_video);
 
         mVideoView = (VideoView)findViewById(R.id.video_view);
-        overlay = findViewById(R.id.overlay);
 
         try {
             String videoUrl = getIntent().getStringExtra(KEY_VIDEO_URL);
-
-            Log.d("video_url", videoUrl);
-
             Uri videoUri = Uri.parse(videoUrl);
-            Log.d("videoUri", "i suspect this one");
 
             mediaController = new MediaController(this);
             mediaController.setAnchorView(findViewById(R.id.fl_c));
@@ -57,14 +50,12 @@ public class VideoActivity extends AppCompatActivity  implements MediaPlayer.OnC
             e.printStackTrace();
         }
         if (savedInstanceState != null) {
-
             currentPosition = savedInstanceState.getInt(DURATION);
             mVideoView.seekTo(currentPosition + 10);
             isPlaying = savedInstanceState.getBoolean(CURRENT_PLAYING);
 
             if (!isPlaying)
                 mVideoView.pause();
-
         }
     }
     @Override
@@ -85,9 +76,6 @@ public class VideoActivity extends AppCompatActivity  implements MediaPlayer.OnC
     public void onCompletion(MediaPlayer mp) {
         finish();
     }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {}
 
     @Override
     public void onPrepared(MediaPlayer mp) {

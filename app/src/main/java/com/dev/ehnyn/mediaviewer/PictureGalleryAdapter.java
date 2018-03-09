@@ -10,17 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
-/**
- * Created by ehnyn on 3/8/18.
- */
 
 public class PictureGalleryAdapter extends RecyclerView.Adapter<PictureGalleryAdapter.MyViewHolder> {
 

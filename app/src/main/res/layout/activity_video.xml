@@ -10,11 +10,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:minHeight="20dp" />
-
-    <View
-        android:id="@+id/overlay"
-        android:background="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
 </FrameLayout>

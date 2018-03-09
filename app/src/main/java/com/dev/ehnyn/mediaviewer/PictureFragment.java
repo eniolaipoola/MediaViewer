@@ -1,10 +1,8 @@
 package com.dev.ehnyn.mediaviewer;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,9 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -54,9 +49,6 @@ public class PictureFragment extends Fragment implements PictureGalleryAdapter.I
         recyclerView.setAdapter(galleryAdapter);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-
-
-
         FloatingActionButton fab = rootview.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +71,9 @@ public class PictureFragment extends Fragment implements PictureGalleryAdapter.I
 
         if (requestCode == IMAGE_PICKED && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri uri = data.getData();
-
             imagePaths.add(String.valueOf(uri));
             imagePath.add(String.valueOf(uri));
             galleryAdapter.notifyDataSetChanged();
-
-
-
         }
     }
 
