@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MediaViewer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="select">Please select a picture using the add button</string>
+    <string name="selectVideo">Select a video to render using the add button</string>
+
+    <string name="hello_blank_fragment">Hello Blank Fragment </string>
+</resources>
